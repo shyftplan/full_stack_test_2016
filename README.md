@@ -4,7 +4,7 @@ In order to see how you work we would love to see how you perform a couple of li
 
 Write code that you are proud to show. You can decide how much time to spend on the assignment. 
 
-  1.	Generate a basic app that displays a calendar. Similar to what you can see at shyftplan as the “List View”.
+  1.	Generate a basic app that displays a "calendar". Get inspiration to what you can see at shyftplan as the "List View". But don't use a third party tool. This should just be a very basic "list of elements" looking like a calendar.
   2.	Generate 20 random events in your database between 2 and 10 hours in your database and display them in your calendar.
   3.	Use JS to allow events to be dragged from one day to another. Save and read these changes in your database.
 
