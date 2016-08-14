@@ -5,13 +5,10 @@ p
   = @event.name
 p
   strong Start:
-  = @event.start
+  = @event.start_time
 p
   strong End:
-  = @event.end
-p
-  strong Order:
-  = @event.order
+  = @event.end_time
 
 = link_to 'Edit', edit_event_path(@event)
 '|

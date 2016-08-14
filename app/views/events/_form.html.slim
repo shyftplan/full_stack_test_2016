@@ -10,12 +10,9 @@
     = f.label :name
     = f.text_field :name
   .field
-    = f.label :start
-    = f.datetime_select :start
+    = f.label :start_time
+    = f.datetime_select :start_time
   .field
-    = f.label :end
-    = f.datetime_select :end
-  .field
-    = f.label :order
-    = f.number_field :order
+    = f.label :end_time
+    = f.datetime_select :end_time
   .actions = f.submit

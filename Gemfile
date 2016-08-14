@@ -16,6 +16,8 @@ gem 'pg'
 gem 'slim-rails'
 
 gem 'ranked-model'
+gem 'jquery-ui-rails'
+gem 'bootstrap-datetimepicker-rails'
 
 group :production do
   gem 'rails_12factor'

@@ -1,5 +1,12 @@
 h1 Listing events
 
+= button_to 'New Event', new_event_path, method: :get
+br
+= form_tag("/events", method: 'get', :html => { class: "ui form"}) do
+  = text_field_tag :date, nil, class: "datepicker"
+  = submit_tag 'week'
+br
+
 ul.week.sunday
   li
     | Sunday
@@ -29,28 +36,9 @@ ul.week.saturday
     | Saturday
 
 
-table
-  thead
-    tr
-      th Name
-      th Start
-      th End
-      th Order
-      th
-      th
-      th
+/td = link_to 'Show', event
+/td = link_to 'Edit', edit_event_path(event)
+/td = link_to 'Destroy', event, data: { confirm: 'Are you sure?' }, method: :delete
 
-  tbody
-    - @events.each do |event|
-      tr
-        td = event.name
-        td = event.start
-        td = event.end
-        td = event.order
-        td = link_to 'Show', event
-        td = link_to 'Edit', edit_event_path(event)
-        td = link_to 'Destroy', event, data: { confirm: 'Are you sure?' }, method: :delete
 
-br
 
-= link_to 'New Event', new_event_path
