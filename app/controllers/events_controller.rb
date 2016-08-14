@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   before_action :set_week, only: [:index]
 
   def index
-    @events = Event.all
+    @events = Event.weekly(@week)
   end
 
   def show
@@ -46,7 +46,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :start, :end, :order)
+    params.require(:event).permit(:name, :start_time, :end_time, :order)
   end
 
   def set_week

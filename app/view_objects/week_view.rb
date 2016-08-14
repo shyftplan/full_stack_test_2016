@@ -32,5 +32,8 @@ class WeekView
     (@start_date+6).strftime("%A %m/%d")
   end
 
+  def between
+    (@start_date..@start_date+6)
+  end
 
 end

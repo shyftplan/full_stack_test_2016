@@ -32,7 +32,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-doc'
   gem 'pry-byebug'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
 
   gem 'better_errors'
@@ -40,6 +39,9 @@ group :development, :test do
   gem 'spring-commands-rspec'
 end
 
+group :development do
+  gem 'web-console', '~> 2.0'
+end
 
 group :test do
   gem 'capybara'
