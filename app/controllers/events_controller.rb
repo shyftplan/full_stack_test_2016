@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_week, only: [:index]
 
   def index
     @events = Event.all
@@ -46,5 +47,9 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:name, :start, :end, :order)
+  end
+
+  def set_week
+    @week = WeekView.new(params[:date])
   end
 end
