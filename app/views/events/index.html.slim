@@ -10,30 +10,37 @@ br
 ul.week.sunday
   li
     = @week.sunday
+  = render 'weekly', wday: 0
 
 ul.week.monday
   li
     = @week.monday
+  = render 'weekly', wday: 1
 
 ul.week.tuesday
   li
     = @week.tuesday
+  = render 'weekly', wday: 2
 
 ul.week.wednesday
   li
     = @week.wednesday
+  = render 'weekly', wday: 3
 
 ul.week.thursday
   li
     = @week.thursday
+  = render 'weekly', wday: 4
 
 ul.week.friday
   li
     = @week.friday
+  = render 'weekly', wday: 5
 
 ul.week.saturday
   li
     = @week.saturday
+  = render 'weekly', wday: 6
 
 
 /td = link_to 'Show', event
