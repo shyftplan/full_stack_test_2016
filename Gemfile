@@ -15,6 +15,8 @@ gem 'high_voltage'
 gem 'pg'
 gem 'slim-rails'
 
+gem 'ranked-model'
+
 group :production do
   gem 'rails_12factor'
 end
