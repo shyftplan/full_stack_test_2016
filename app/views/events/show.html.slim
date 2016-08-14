@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @event.name
+p
+  strong Start:
+  = @event.start
+p
+  strong End:
+  = @event.end
+p
+  strong Order:
+  = @event.order
+
+= link_to 'Edit', edit_event_path(@event)
+'|
+= link_to 'Back', events_path
