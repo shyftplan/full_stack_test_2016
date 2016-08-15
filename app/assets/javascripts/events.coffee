@@ -3,13 +3,13 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  $(".datepicker").datepicker
+  $('.datepicker').datepicker
     dateFormat: 'yy-mm-dd'
 
 $ ->
   $('.sunday, .monday, .tuesday, .wednesday, .thursday, .friday, .saturday').sortable
     items: '.item'
-    connectWith: ".connectedSortable"
+    connectWith: '.connectedSortable'
 
     update: (e, ui) ->
       item = ui.item
@@ -21,3 +21,5 @@ $ ->
         url: item_data.updateUrl
         dataType: 'json'
         data: params
+    stop: (e, ui) ->
+      ui.item.effect('highlight', { color: '#999999'})
