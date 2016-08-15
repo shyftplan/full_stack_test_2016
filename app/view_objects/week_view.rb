@@ -1,7 +1,7 @@
 class WeekView
   def initialize(date)
     date = date.present? ? Date.parse(date) : Date.today
-    @start_date = date - date.cwday
+    @start_date = date - date.cwday % 7
   end
 
   def sunday
