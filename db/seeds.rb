@@ -1,0 +1,7 @@
+Event.create( name: 'AAA', start_time: '15 Aug 2016 02:00:00', end_time: '15 Aug 2016 03:00:00')
+Event.create( name: 'BBB', start_time: '16 Aug 2016 03:00:00', end_time: '16 Aug 2016 05:00:00')
+Event.create( name: 'CCC', start_time: '17 Aug 2016 05:00:00', end_time: '17 Aug 2016 07:00:00')
+Event.create( name: 'DDD', start_time: '18 Aug 2016 06:00:00', end_time: '18 Aug 2016 10:00:00')
+Event.create( name: 'EEE', start_time: '19 Aug 2016 12:00:00', end_time: '19 Aug 2016 15:00:00')
+Event.create( name: 'FFF', start_time: '20 Aug 2016 16:00:00', end_time: '20 Aug 2016 16:30:00')
+Event.create( name: 'GGG', start_time: '21 Aug 2016 21:00:00', end_time: '21 Aug 2016 22:00:00')

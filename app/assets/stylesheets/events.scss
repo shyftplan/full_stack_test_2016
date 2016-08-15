@@ -1,0 +1,33 @@
+// Place all the styles related to the Events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'bootstrap-datetimepicker';
+@import "jquery-ui/core";
+@import "jquery-ui/theme";
+@import "jquery-ui/datepicker";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.week {
+    border: 2px solid #eee;
+    width: 120px;
+    height: 400px;
+    min-height: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 3px 0 0 0;
+    float: left;
+    margin-right: 5px;
+}
+
+.week li {
+  border: 2px solid #eee;
+  margin: 0 3px 3px 3px;
+  padding: 5px;
+  font-size: 1.2em;
+  width: 110px;
+}
+
+.week li.title {
+  background-color: #eee;
+}

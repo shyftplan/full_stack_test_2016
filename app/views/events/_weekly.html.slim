@@ -1,0 +1,10 @@
+- @events[wday].each do |event|
+  li.item(data = { model_name: event.class.name.underscore, update_url: event_sort_path(event) } id = "event-#{event.id}")
+    = event.name
+    h5
+      = event.start_time.strftime("%H:%M -")
+      = event.end_time.strftime("%H:%M")
+    = link_to edit_event_path(event) do
+      span class="glyphicon glyphicon-pencil" aria-hidden="true"
+    = link_to event, data: { confirm: 'Are you sure?' }, method: :delete do
+      span class="glyphicon glyphicon-trash" aria-hidden="true"

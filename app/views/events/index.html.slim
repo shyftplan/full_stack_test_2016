@@ -1,0 +1,44 @@
+h1 Listing events
+
+= button_to 'New Event', new_event_path, method: :get
+br
+= form_tag("/events", method: 'get', :html => { class: "ui form"}) do
+  = text_field_tag :date, nil, class: "datepicker"
+  = submit_tag 'week'
+br
+
+ul.week.sunday.connectedSortable
+  li.title
+    = @week.sunday
+  = render 'weekly', wday: 0
+
+ul.week.monday.connectedSortable
+  li.title
+    = @week.monday
+  = render 'weekly', wday: 1
+
+ul.week.tuesday.connectedSortable
+  li.title
+    = @week.tuesday
+  = render 'weekly', wday: 2
+
+ul.week.wednesday.connectedSortable
+  li.title
+    = @week.wednesday
+  = render 'weekly', wday: 3
+
+ul.week.thursday.connectedSortable
+  li.title
+    = @week.thursday
+  = render 'weekly', wday: 4
+
+ul.week.friday.connectedSortable
+  li.title
+    = @week.friday
+  = render 'weekly', wday: 5
+
+ul.week.saturday.connectedSortable
+  li.title
+    = @week.saturday
+  = render 'weekly', wday: 6
+
