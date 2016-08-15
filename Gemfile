@@ -18,6 +18,7 @@ gem 'slim-rails'
 gem 'ranked-model'
 gem 'jquery-ui-rails'
 gem 'bootstrap-datetimepicker-rails'
+gem 'jquery-turbolinks'
 
 group :production do
   gem 'rails_12factor'
