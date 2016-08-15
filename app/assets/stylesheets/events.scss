@@ -5,8 +5,8 @@
 @import "jquery-ui/core";
 @import "jquery-ui/theme";
 @import "jquery-ui/datepicker";
-@import "bootstrap";
 @import "bootstrap-sprockets";
+@import "bootstrap";
 
 .week {
     border: 2px solid #eee;
@@ -26,4 +26,8 @@
   padding: 5px;
   font-size: 1.2em;
   width: 110px;
+}
+
+.week li.title {
+  background-color: #eee;
 }

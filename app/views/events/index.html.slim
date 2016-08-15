@@ -7,45 +7,38 @@ br
   = submit_tag 'week'
 br
 
-ul.week.sunday
-  li
+ul.week.sunday.connectedSortable
+  li.title
     = @week.sunday
   = render 'weekly', wday: 0
 
-ul.week.monday
-  li
+ul.week.monday.connectedSortable
+  li.title
     = @week.monday
   = render 'weekly', wday: 1
 
-ul.week.tuesday
-  li
+ul.week.tuesday.connectedSortable
+  li.title
     = @week.tuesday
   = render 'weekly', wday: 2
 
-ul.week.wednesday
-  li
+ul.week.wednesday.connectedSortable
+  li.title
     = @week.wednesday
   = render 'weekly', wday: 3
 
-ul.week.thursday
-  li
+ul.week.thursday.connectedSortable
+  li.title
     = @week.thursday
   = render 'weekly', wday: 4
 
-ul.week.friday
-  li
+ul.week.friday.connectedSortable
+  li.title
     = @week.friday
   = render 'weekly', wday: 5
 
-ul.week.saturday
-  li
+ul.week.saturday.connectedSortable
+  li.title
     = @week.saturday
   = render 'weekly', wday: 6
-
-
-/td = link_to 'Show', event
-/td = link_to 'Edit', edit_event_path(event)
-/td = link_to 'Destroy', event, data: { confirm: 'Are you sure?' }, method: :delete
-
-
 
