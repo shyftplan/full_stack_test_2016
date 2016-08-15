@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :sort]
   before_action :set_week, only: [:index]
 
   def index
@@ -18,7 +18,6 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-
     if @event.save
       redirect_to @event, notice: 'Event was successfully created.'
     else
@@ -39,14 +38,19 @@ class EventsController < ApplicationController
     redirect_to events_url, notice: 'Event was successfully destroyed.'
   end
 
+  def sort
+    @event.drag_update(event_params)
+    render nothing: true
+  end
+
   private
 
   def set_event
-    @event = Event.find(params[:id])
+    @event = Event.find(params[:id] || params[:event_id])
   end
 
   def event_params
-    params.require(:event).permit(:name, :start_time, :end_time, :order)
+    params.require(:event).permit(:name, :start_time, :end_time, :order_position, :wday)
   end
 
   def set_week
