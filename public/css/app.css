@@ -1,0 +1,74 @@
+body, html, .main, .popup {
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.main, .popup {
+    display: flex;
+    padding-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.title {
+    display: flex;
+}
+.controls-container {
+    display: flex;
+    padding: 10px;
+    width: 80%;
+}
+.weekname {
+    margin-left: 10px;
+    margin-right: 10px;
+    min-width: 160px;
+}
+.placeholder {
+    width: 100%;
+}
+.week {
+    display: flex;
+    border: solid 1px;
+    height: 100%;
+    width: 80%;
+}
+.day {
+    display: flex;
+    border: solid 1px;
+    width: 100%;
+    flex-direction: column;
+}
+.day_title {
+    display: flex;
+    border-bottom: solid 1px;
+    justify-content: center;
+    align-items: center;
+}
+.day_content {
+    display: flex;
+    height: 100%;
+    position: relative;
+    flex-direction: column;
+}
+.hour {
+    height: 100%;
+}
+
+.hour:nth-child(2n) {
+    background-color: #e8e8e8;
+}
+
+.event {
+    background-color: #00a9e7;
+    width: 100%;
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0.7;
+    z-index: 100;
+}
+.ng-hide {
+    display: none;
+}

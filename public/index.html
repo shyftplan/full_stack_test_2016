@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body ng-app="app" ng-controller="appCtrl as appCtrl" class="ng-hide" ng-show="true">
+<div class="main" ng-show="appCtrl.mode == 'main'">
+    <h1 class="title">Calendar</h1>
+    <div class="controls-container">
+        <button class="btn btn-default" ng-click="appCtrl.previousWeek()">Previous</button>
+        <h5 class="weekname">{{appCtrl.getWeekName()}}</h5>
+        <button class="btn btn-default" ng-click="appCtrl.nextWeek()">Next</button>
+        <div class="placeholder"></div>
+        <button class="btn btn-primary" ng-click="appCtrl.openNewEventPopup()">New event</button>
+    </div>
+    <div class="week">
+        <div class="day" ng-repeat="day in appCtrl.days">
+            <div class="day_title"><h5>{{day.title}}</h5></div>
+            <div class="day_content">
+                <div class="hour" ng-repeat="hour in appCtrl.hours"></div>
+                <div event="event"
+                     update-event="appCtrl.updateEvent"
+                       class="event" ng-repeat="event in appCtrl.events"
+                     ng-if="appCtrl.inWeek(event) && event.day_num == day.num"
+                     ng-style="appCtrl.getStyle(event)"
+                     ng-click="appCtrl.openUpdateEventPopup(event)"
+                ></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="popup" ng-hide="appCtrl.mode == 'main'">
+    <form>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Name" ng-model="appCtrl.event.name">
+        </div>
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" class="form-control" id="date" ng-model="appCtrl.event.date">
+        </div>
+        <div class="form-group">
+            <label for="hour_of_start">Start Hour</label>
+            <select class="form-control" id="hour_of_start"
+                    ng-model="appCtrl.event.hour_of_start"
+                    ng-options="hour.id as hour.id for hour in appCtrl.hours">
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="hour_of_end">End Hour</label>
+            <select class="form-control" id="hour_of_end"
+                    ng-model="appCtrl.event.hour_of_end"
+                    ng-options="(hour.id+1) as (hour.id+1) for hour in appCtrl.hours">
+            </select>
+        </div>
+        <button class="btn btn-success" ng-click="appCtrl.saveEvent()">Save</button>
+        <button class="btn btn-danger" ng-click="appCtrl.deleteEvent()" ng-show="appCtrl.event.id">Delete</button>
+        <button class="btn btn-default" ng-click="appCtrl.back()">Back</button>
+    </form>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.min.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/eventDirective.js"></script>
+<script src="/js/eventsRepository.js"></script>
+</html>
