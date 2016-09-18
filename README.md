@@ -4,6 +4,10 @@
 
 This app is build with RoR API and single page application frontend with AngularJS.
 
+## Link
+
+[https://frozen-eyrie-82808.herokuapp.com/](https://frozen-eyrie-82808.herokuapp.com/)
+
 ## Used technologies
 
 - Ruby on Rails
